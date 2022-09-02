@@ -1,7 +1,11 @@
 const url = `https://openapi.programming-hero.com/api/news/categories`;
+let jsonCategoryData = "";
 fetch(url)
   .then((res) => res.json())
-  .then((data) => categoryBar(data.data.news_category))
+  .then((data) => {
+    categoryBar(data.data.news_category);
+    jsonCategoryData = data.data.news_category;
+  })
   .catch((error) => console.log(error));
 
 let currentCategory = "01";
@@ -17,8 +21,14 @@ const categoryBar = (jsonCategory) => {
     let liElement = document.createElement("li");
     liElement.classList.add("nav-item", "me-2");
     liElement.innerHTML = `
-    <a class="nav-link ${activeClass}" aria-current="page" href="#"">${x.category_name}</a>
+    <a class="nav-link ${activeClass}" aria-current="page" href="#" onclick='setCurrentCatagory("${x.category_id}")'">${x.category_name}</a>
     `;
     categories.appendChild(liElement);
   });
+};
+const setCurrentCatagory = (id) => {
+  currentCategory = id;
+  document.getElementById("categories").innerHTML = "";
+  console.log(currentCategory);
+  categoryBar(jsonCategoryData);
 };
