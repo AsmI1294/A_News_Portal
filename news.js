@@ -9,7 +9,13 @@ let loadNews = () => {
 };
 const newsCards = (data) => {
   let newsSection = document.getElementById("news");
+  let s = 1;
   newsSection.innerHTML = "";
+  document.getElementById(
+    "cardNum"
+  ).innerHTML = `<div class="alert alert-success mt-3" role="alert">
+  ${data.length} items found
+</div>`;
   console.log(data);
   data.forEach((element) => {
     let newsDiv = document.createElement("div");
@@ -60,12 +66,8 @@ const newsCards = (data) => {
                 <div class="col-md-3 my-auto d-flex justify-content-center">
                   <i class="fa-regular fa-eye my-auto pe-2"></i> <small>1.5M</small>
                 </div>
-                <div class="col-md-3 my-auto d-flex justify-content-center">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
+                <div class="col-md-3 my-auto d-flex justify-content-center" id="star${s}">
+                  
                 </div>
                 <div
                   class="col-md-3 my-auto d-flex justify-content-end fs-3 pe-3"
@@ -82,5 +84,31 @@ const newsCards = (data) => {
         
         `;
     newsSection.appendChild(newsDiv);
+    addStar(element.rating.number, "star" + s);
+    s++;
   });
+};
+//Dynamic Star
+let addStar = (rating, id) => {
+  let starDiv = document.getElementById(id);
+  starDiv.innerHTML = "";
+  let fullStar = Math.floor(rating);
+  let halfStar = Math.round(rating % 1);
+  let emptyStar = 5 - (fullStar + halfStar);
+
+  for (let i = 1; i <= fullStar; i++) {
+    var createStar = document.createElement("i");
+    createStar.classList.add("fa-solid", "fa-star");
+    starDiv.appendChild(createStar);
+  }
+  for (let i = 1; i <= halfStar; i++) {
+    var createStar = document.createElement("i");
+    createStar.classList.add("fa-solid", "fa-star-half-stroke");
+    starDiv.appendChild(createStar);
+  }
+  for (let i = 1; i <= emptyStar; i++) {
+    var createStar = document.createElement("i");
+    createStar.classList.add("fa-regular", "fa-star");
+    starDiv.appendChild(createStar);
+  }
 };
