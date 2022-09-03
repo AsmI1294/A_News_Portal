@@ -64,13 +64,17 @@ const newsCards = (data) => {
                   </div>
                 </div>
                 <div class="col-md-3 my-auto d-flex justify-content-center">
-                  <i class="fa-regular fa-eye my-auto pe-2"></i> <small>1.5M</small>
+                  <i class="fa-regular fa-eye my-auto pe-2"></i> <small>${
+                    element.total_view
+                  }</small>
                 </div>
                 <div class="col-md-3 my-auto d-flex justify-content-center" id="star${s}">
                   
                 </div>
                 <div
-                  class="col-md-3 my-auto d-flex justify-content-end fs-3 pe-3"
+                  class="col-md-3 my-auto d-flex justify-content-end fs-3 pe-3" type="button" data-bs-toggle="modal" data-bs-target="#detailsModal" onclick="loadDetails('${
+                    element._id
+                  }')"
                 >
                   <i class="fa-solid fa-arrow-right"></i>
                 </div>
@@ -87,28 +91,4 @@ const newsCards = (data) => {
     addStar(element.rating.number, "star" + s);
     s++;
   });
-};
-//Dynamic Star
-let addStar = (rating, id) => {
-  let starDiv = document.getElementById(id);
-  starDiv.innerHTML = "";
-  let fullStar = Math.floor(rating);
-  let halfStar = Math.round(rating % 1);
-  let emptyStar = 5 - (fullStar + halfStar);
-
-  for (let i = 1; i <= fullStar; i++) {
-    var createStar = document.createElement("i");
-    createStar.classList.add("fa-solid", "fa-star");
-    starDiv.appendChild(createStar);
-  }
-  for (let i = 1; i <= halfStar; i++) {
-    var createStar = document.createElement("i");
-    createStar.classList.add("fa-solid", "fa-star-half-stroke");
-    starDiv.appendChild(createStar);
-  }
-  for (let i = 1; i <= emptyStar; i++) {
-    var createStar = document.createElement("i");
-    createStar.classList.add("fa-regular", "fa-star");
-    starDiv.appendChild(createStar);
-  }
 };

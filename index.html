@@ -76,6 +76,29 @@
     <section id="cardNum"></section>
     <!-- news -->
     <section id="news"></section>
+    <!-- modal -->
+    <div
+      class="modal fade"
+      id="detailsModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-body" id="mBody"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://kit.fontawesome.com/3f62ac139c.js"
@@ -86,6 +109,7 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
+    <script src="modal.js"></script>
     <script src="news.js"></script>
     <script src="category.js"></script>
   </body>
