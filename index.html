@@ -20,7 +20,7 @@
           >Abul <mark class="text-primary fs-3">News</mark></a
         >
         <button
-          class="navbar-toggler"
+          class="navbar-toggler ms-auto"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavDropdown"
@@ -28,7 +28,7 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"> </span>
         </button>
         <div>
           <div class="collapse navbar-collapse ms-2" id="navbarNavDropdown">
@@ -37,7 +37,7 @@
                 <a class="nav-link active" aria-current="page" href="#">News</a>
               </li>
               <li class="nav-item me-4">
-                <a class="nav-link" href="#">Blogs</a>
+                <a class="nav-link" href="faq.html">Blogs</a>
               </li>
               <li class="nav-item me-4">
                 <a class="nav-link border bg-secondary rounded-circle" href="#"
@@ -56,23 +56,24 @@
     >
       <div class="container-fluid">
         <button
-          class="navbar-toggler"
+          class="navbar-toggler w-100"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
+          data-bs-target="#navbarNavDropdown2"
           aria-controls="navbarNavDropdown"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"> </span>Browse Categories
         </button>
         <div class="mx-auto">
-          <div class="collapse navbar-collapse ms-2" id="navbarNavDropdown">
+          <div class="collapse navbar-collapse ms-2" id="navbarNavDropdown2">
             <ul class="navbar-nav" id="categories"></ul>
           </div>
         </div>
       </div>
     </nav>
+    <!-- spinner -->
     <div class="d-flex justify-content-center" id="spinner">
       <div class="spinner-grow" role="status">
         <span class="visually-hidden">Loading...</span>
@@ -80,7 +81,6 @@
     </div>
     <!-- Items Number -->
     <section id="cardNum"></section>
-    <!-- spinner -->
 
     <!-- news -->
     <section id="news"></section>
@@ -107,6 +107,13 @@
         </div>
       </div>
     </div>
+    <!-- footer -->
+    <footer
+      class="bg-dark rounded text-light fs-5 d-flex justify-content-center align-items-center"
+      style="height: 20vh"
+    >
+      <p>Copyright 2022 © Asm Ittehad</p>
+    </footer>
 
     <script
       src="https://kit.fontawesome.com/3f62ac139c.js"

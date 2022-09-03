@@ -39,14 +39,14 @@ const newsCards = (data) => {
         style="width: 95%"
       >
         <div class="row g-0">
-          <div class="col-md-4">
+          <div class="col-12 col-md-4">
             <img
               src="${element.image_url}"
               class="img-fluid rounded-start h-100"
               alt="..."
             />
           </div>
-          <div class="col-md-8 my-auto">
+          <div class="col-12 col-md-8 my-auto">
             <div class="card-body">
               <h3 class="card-title">${element.title}</h3>
               <p
@@ -63,7 +63,7 @@ const newsCards = (data) => {
               ${element.details}
               </p>
               <div class="row g-0">
-                <div class="col-md-3 d-flex">
+                <div class="col-12 col-md-3 d-flex">
                   <img
                     src="${element.author.img}"
                     class="img-fluid rounded-circle my-auto me-2"
@@ -75,14 +75,14 @@ const newsCards = (data) => {
                     <p class="m-0 text-muted">${date.toDateString()}</p>
                   </div>
                 </div>
-                <div class="col-md-3 my-auto d-flex justify-content-center">
+                <div class="col-12 col-md-3 my-auto d-flex justify-content-center">
                   <i class="fa-regular fa-eye my-auto pe-2"></i> <small>${view}</small>
                 </div>
-                <div class="col-md-3 my-auto d-flex justify-content-center" id="star${s}">
+                <div class="col-12 col-md-3 my-auto d-flex justify-content-center" id="star${s}">
                   
                 </div>
                 <div
-                  class="col-md-3 my-auto d-flex justify-content-end fs-3 pe-3" type="button" data-bs-toggle="modal" data-bs-target="#detailsModal" onclick="loadDetails('${
+                  class="col-12 col-md-3 my-auto d-flex justify-content-end fs-3 pe-3" type="button" data-bs-toggle="modal" data-bs-target="#detailsModal" onclick="loadDetails('${
                     element._id
                   }')"
                 >

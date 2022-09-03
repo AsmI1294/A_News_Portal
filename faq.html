@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <title>Abul News FAQ</title>
+  </head>
+  <body class="container bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold fs-4 border rounded" href="#"
+          >Abul <mark class="text-primary fs-3">News</mark></a
+        >
+        <button
+          class="navbar-toggler ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"> </span>
+        </button>
+        <div>
+          <div class="collapse navbar-collapse ms-2" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item me-4">
+                <a class="nav-link" aria-current="page" href="index.html"
+                  >News</a
+                >
+              </li>
+              <li class="nav-item me-4">
+                <a class="nav-link active" href="faq.html">Blogs</a>
+              </li>
+              <li class="nav-item me-4">
+                <a class="nav-link border bg-secondary rounded-circle" href="#"
+                  ><i class="fa-regular fa-user"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="my-5 mx-5">
+      <div class="text-center mb-3">
+        <h1>Frequently Asked Questions</h1>
+      </div>
+      <div class="w-100 widthCus mx-auto my-3">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button text-dark fw-bold fs-5"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Difference between var, let and const keywords in JavaScript
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body text-secondary">
+                The scope of a var variable is functional scope, but The scope
+                of a let and const variables is block scope. var can be updated
+                and re-declared into the scope, let can be updated but cannot be
+                re-declared into the scope, and const cannot be updated or
+                re-declared into the scope.var and let can be declared without
+                initialization, but const cannot be declared without
+                initialization.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button collapsed text-dark fw-bold fs-5"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                The Difference Between Regular Functions and Arrow Functions
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body text-secondary">
+                this keyword is one of the most used keywords in JavaScript. But
+                when it comes to regular functions and arrow functions, it
+                behaves in entirely different ways. Arrow functions don't have
+                their own “this”, and they don’t redefine the value of “this
+                ”within the function. In regular JavaScript functions, arguments
+                keywords can be used to access the passed arguments when the
+                function is invoked, But, arrow functions do not have their own
+                arguments and it uses the arguments from the outer function.If
+                the arrow function contains one expression, you can omit the
+                curly braces, and then the expression will be implicitly
+                returned.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button
+                class="accordion-button collapsed text-dark fw-bold fs-5"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Difference between map, foreach, filter, and find methods of
+                JavaScript Arrays
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body text-secondary">
+                The map() method in JavaScript returns an array by calling a
+                specific function on each element present in the parent array.
+                The forEach() method calls a function for each element in an
+                array but it does not return anything. The filter() method is
+                used to apply a test to an array. It then returns all the values
+                that pass this test in the form of an array. The find() method
+                returns the value of the first element that passes a test. The
+                find() method executes a function for each array element.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button
+                class="accordion-button collapsed text-dark fw-bold fs-5"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Why do we use Template strings?
+              </button>
+            </h2>
+            <div
+              id="collapseFour"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingFour"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body text-secondary">
+                Template literals are literals delimited with backtick (`)
+                characters, allowing for multi-line strings, for string
+                interpolation with embedded expressions, and for special
+                constructs called tagged templates. Template literals are
+                sometimes informally called template strings, because they are
+                used most commonly for string interpolation (to create strings
+                by doing substitution of placeholders). However, a tagged
+                template literal may not result in a string; it can be used with
+                a custom tag function to perform whatever operations you want on
+                the different parts of the template literal.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://kit.fontawesome.com/3f62ac139c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
