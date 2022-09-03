@@ -7,10 +7,11 @@ fetch(url)
     jsonCategoryData = data.data.news_category;
   })
   .catch((error) => console.log(error));
-
+//initial Catagory and load
 let currentCategory = "01";
 loadNews();
 
+//catagory from API
 const categoryBar = (jsonCategory) => {
   let categories = document.getElementById("categories");
 
@@ -27,6 +28,7 @@ const categoryBar = (jsonCategory) => {
     categories.appendChild(liElement);
   });
 };
+//onclick on each catagory following changes happen
 const setCurrentCatagory = (id) => {
   document.getElementById("spinner").classList.remove("d-none");
   currentCategory = id;

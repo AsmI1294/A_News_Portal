@@ -32,6 +32,7 @@ let loadDetails = (news_id) => {
     })
     .catch((error) => console.log(error));
 };
+//update modals from api
 let modal = (data) => {
   let containerDiv = document.getElementById("mBody");
   let aName = data.author.name;

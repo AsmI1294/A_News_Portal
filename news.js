@@ -8,6 +8,7 @@ let loadNews = () => {
     })
     .catch((error) => console.log(error));
 };
+// add all cards
 const newsCards = (data) => {
   let newsSection = document.getElementById("news");
   let s = 1;
@@ -101,6 +102,7 @@ const newsCards = (data) => {
     addStar(element.rating.number, "star" + s);
     s++;
   });
+  // spinner condition
   if (
     document.getElementById("spinner").classList.contains("d-none") == false
   ) {
