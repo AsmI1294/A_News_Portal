@@ -1,5 +1,6 @@
 let loadNews = () => {
   let urlNews = `https://openapi.programming-hero.com/api/news/category/${currentCategory}`;
+  document.getElementById("news").innerHTML = "";
   fetch(urlNews)
     .then((res) => res.json())
     .then((data) => {
@@ -10,16 +11,27 @@ let loadNews = () => {
 const newsCards = (data) => {
   let newsSection = document.getElementById("news");
   let s = 1;
-  newsSection.innerHTML = "";
+  let itemNum = data.length;
+  if (itemNum == 0) {
+    itemNum = "No";
+  }
   document.getElementById(
     "cardNum"
   ).innerHTML = `<div class="alert alert-success mt-3" role="alert">
-  ${data.length} items found
+  ${itemNum} items found
 </div>`;
   console.log(data);
   data.forEach((element) => {
     let newsDiv = document.createElement("div");
     let date = new Date(element.author.published_date);
+    let aName = element.author.name;
+    let view = element.total_view;
+    if (aName == null) {
+      aName = "No name found";
+    }
+    if (view == null) {
+      view = "No data Found";
+    }
     newsDiv.innerHTML = `
         
         <div
@@ -59,14 +71,12 @@ const newsCards = (data) => {
                     alt="..."
                   />
                   <div>
-                    <p class="m-0">${element.author.name}</p>
+                    <p class="m-0">${aName}</p>
                     <p class="m-0 text-muted">${date.toDateString()}</p>
                   </div>
                 </div>
                 <div class="col-md-3 my-auto d-flex justify-content-center">
-                  <i class="fa-regular fa-eye my-auto pe-2"></i> <small>${
-                    element.total_view
-                  }</small>
+                  <i class="fa-regular fa-eye my-auto pe-2"></i> <small>${view}</small>
                 </div>
                 <div class="col-md-3 my-auto d-flex justify-content-center" id="star${s}">
                   
@@ -91,4 +101,9 @@ const newsCards = (data) => {
     addStar(element.rating.number, "star" + s);
     s++;
   });
+  if (
+    document.getElementById("spinner").classList.contains("d-none") == false
+  ) {
+    document.getElementById("spinner").classList.add("d-none");
+  }
 };

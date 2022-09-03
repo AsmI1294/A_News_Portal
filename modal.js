@@ -34,7 +34,14 @@ let loadDetails = (news_id) => {
 };
 let modal = (data) => {
   let containerDiv = document.getElementById("mBody");
-
+  let aName = data.author.name;
+  let view = data.total_view;
+  if (aName == null) {
+    aName = "No name found";
+  }
+  if (view == null) {
+    view = "Found no";
+  }
   let date = new Date(data.author.published_date);
   let newModal = document.createElement("div");
   console.log(data);
@@ -55,7 +62,7 @@ let modal = (data) => {
         alt="..."
         />
         <div>
-        <p class="m-0">${data.author.name}</p>
+        <p class="m-0">${aName}</p>
         <p class="m-0 text-muted">${date.toDateString()}</p>
         </div>
     </div>
@@ -63,7 +70,7 @@ let modal = (data) => {
     <div class="col-md-3 my-auto d-flex justify-content-end w-100">
                   <i class="fa-regular fa-eye my-auto pe-2"></i> 
                   <span>
-                  ${data.total_view} views
+                  ${view} views
                   </span>
                 </div>
     <div  id="star">

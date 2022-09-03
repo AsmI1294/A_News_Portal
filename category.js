@@ -28,6 +28,7 @@ const categoryBar = (jsonCategory) => {
   });
 };
 const setCurrentCatagory = (id) => {
+  document.getElementById("spinner").classList.remove("d-none");
   currentCategory = id;
   document.getElementById("categories").innerHTML = "";
   console.log(currentCategory);
