@@ -9,6 +9,7 @@ fetch(url)
   .catch((error) => console.log(error));
 
 let currentCategory = "01";
+loadNews();
 
 const categoryBar = (jsonCategory) => {
   let categories = document.getElementById("categories");
@@ -31,4 +32,5 @@ const setCurrentCatagory = (id) => {
   document.getElementById("categories").innerHTML = "";
   console.log(currentCategory);
   categoryBar(jsonCategoryData);
+  loadNews();
 };
